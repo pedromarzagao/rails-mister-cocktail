@@ -1,0 +1,22 @@
+<div class="cocktail-name">
+  <h2><%= @cocktail.name %></h2>
+</div>
+
+<div class="cocktail-image">
+
+</div>
+<% @cocktail.doses.each_with_index do |dose, index| %>
+    <div class="cocktail-ingredients">
+      <p>
+      <%=index +1%>)
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<div class="links">
+  <p><%= link_to "Create a new dose", new_cocktail_doses_path(@cocktail) %></p>
+  <p><%= link_to "Cocktail list", cocktails_path %></p>
+</div>
